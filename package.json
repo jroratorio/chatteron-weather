@@ -1,0 +1,16 @@
+{
+  "name": "chatteron-weather",
+  "version": "1.0.0",
+  "description": "Demo app for weather finding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sayan Chakraborty",
+  "license": "ISC",
+  "dependencies": {
+    "node-geocoder": "^3.21.1",
+    "weather-js": "^2.0.0",
+    "yargs": "^11.0.0"
+  }
+}
