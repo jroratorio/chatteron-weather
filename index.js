@@ -18,7 +18,7 @@ var findTemperatureByCity = function(city, unit) {
     }
     weather.find({search: city, degreeType: unit}, function(err, result) {
         if(err) {
-            console.log('Temperature fetch error ' + err.message);
+            console.log('Temperature fetch error ' + err);
         } else {
             console.log('Temperature at ' + result[0].location.name + ' is ' + result[0].current.temperature + " " + result[0].location.degreetype);
         }  
@@ -33,7 +33,12 @@ var findCityByCoordinates = function( lat, long, unit ){
         }
         else {
             var city = res[0].city;
-            findTemperatureByCity( city, unit );
+            if(city){
+                findTemperatureByCity( city, unit );
+            }
+            else{
+                console.log('Google geocoder - invalid city coordinates ' + lat + ' ' + long);
+            }                
         }        
     });    
 };
